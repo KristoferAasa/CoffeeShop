@@ -1,0 +1,343 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: #4e4946;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+}
+
+header {
+  height: 100vh;
+  background-color: #ffede3;
+  /* border-bottom: solid 1px black; TEMPORARY BORDER */
+}
+
+.logo {
+  font-family: sweet-square-pro, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+header .navbar {
+  background-color: #ffede3;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 6rem;
+  position: fixed;
+  z-index: 50;
+  width: 100%;
+  top: 0;
+}
+
+header a {
+  text-decoration: none;
+  color: #4e4946;
+}
+
+
+header .navbar .navbar-nav {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+header .navbar .navbar-ham {
+  height: 20px;
+  width: 30px;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+header .navbar .navbar-ham:hover  {
+  cursor: pointer;
+}
+
+header .navbar .navbar-ham div {
+  width: 100%;
+  height: 5px;
+  border-radius: 100px;
+  background-color: #4e4946;
+  transition: transform 300ms ease;
+}
+
+header .navbar .navbar-ham div:nth-child(2) {
+  width: 80%;
+}
+
+header .navbar .navbar-ham.active div:nth-child(1){
+  transform: translateY(8px) rotate(45deg);
+}
+
+header .navbar .navbar-ham.active div:nth-child(2){
+  transform: scale(0);
+}
+
+header .navbar .navbar-ham.active div:nth-child(3){
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+header .navbar .navbar-nav .nav-link {
+  font-weight: 800;
+  transition: 300ms;
+}
+
+header .navbar .navbar-nav .nav-link:hover {
+  color: #ab826d;
+}
+
+header .ham-aside {
+  z-index: 60;
+  position: fixed;
+  min-height: 100vh;
+  width: max-content;
+  background-color: #ffede3;
+  border-right: #4e4946 1px solid;
+  padding: 1rem 2rem;
+  transition: transform 300ms ease;
+  transform: translateX(-100%);
+}
+
+header .ham-aside.open  {
+  transform: translateX(0);
+}
+
+header .ham-aside .aside-nav {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  font-weight: 800;
+  margin-top: 2rem;
+}
+
+header .ham-cover {
+  position: fixed;
+  z-index: 55;
+  background-color: black;
+  opacity: 50%;
+  inset: 0;
+  display: none;
+}
+
+header .ham-cover.active {
+  display: block;
+}
+
+header .hero-wrapper {
+  padding-inline: 6rem;
+  padding-top: 6rem;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+header .hero-wrapper .hero-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+header .hero-wrapper .hero-container .hero-text {
+  flex-basis: 60%;
+}
+
+header .hero-wrapper .hero-container .hero-text h1 {
+  font-family: sweet-square-pro, sans-serif;
+}
+
+header .hero-wrapper .hero-container .hero-text span {
+  color: #ad8570;
+}
+
+header .hero-wrapper .hero-container .hero-text p {
+  margin-top: 1rem;
+}
+
+header .hero-wrapper .hero-container .hero-text .explore-btn {
+  background-color: #a1684b;
+  color: white;
+  margin-top: 4rem;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  border: solid #a1684b 2px;
+  display: inline-block;
+  transition: 300ms;
+}
+
+header .hero-wrapper .hero-container .hero-text .explore-btn:hover {
+  background-color: inherit;
+  color: #4e4946;
+}
+
+header .hero-wrapper .hero-container .hero-image img {
+  height: 60vh;
+}
+
+main {
+  padding-inline: 6rem;
+  margin-top: 6rem;
+}
+
+main h1 {
+  font-family: sweet-square-pro, sans-serif;
+}
+
+main a {
+  text-decoration: none;
+  color: #4e4946;
+}
+
+main .content-wrapper .container {
+  margin-top: 2rem;
+}
+
+main .content-wrapper .container .section-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4rem;
+}
+
+main .content-wrapper .container .section-title a {
+  text-decoration: underline;
+}
+
+main .content-wrapper .container .item-section .item-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+
+main .content-wrapper .container .item-section .item-grid .item {
+  border-radius: 5px;
+  overflow: hidden;
+  transition: 300ms;
+  min-width: 250px;
+  flex: 1;
+  max-width: 300px;
+}
+
+main .content-wrapper .container .item-section .item-grid .item:hover {
+  background-color: #ffede3;
+  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+}
+
+main .content-wrapper .container .item-section .item-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  overflow: hidden; 
+  height: 300px;
+}
+
+main .content-wrapper .container .item-section .item-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+main .content-wrapper .container .item-section .item-details {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 1rem;
+  align-items: center;
+}
+
+main .content-wrapper .container .item-section .item-price {
+  color: #ad8570;
+}
+
+footer {
+  margin-top: 4rem;
+}
+
+footer .footer-wrapper a {
+  color: white;
+}
+footer .footer-wrapper {
+  background-color: #A1684B;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+@media (max-width: 1024px) {
+  header .hero-wrapper .hero-container .hero-image img {
+    height: 50vh;
+  }
+}
+
+@media (max-width: 768px) {
+  header .hero-wrapper {
+    padding-inline: 2rem;
+    padding-top: 6rem;
+  }
+
+  header .navbar {
+    padding: 1rem 2rem;
+  }
+
+  header .hero-wrapper .hero-container .hero-text .explore-btn {
+    margin-top: 2rem;
+  }
+
+  main {
+    padding-inline: 2rem;
+  }
+
+  header .hero-wrapper .hero-container .hero-image img {
+    height: 40vh;
+  }
+}
+
+@media (max-width: 616px){
+  header .hero-wrapper .hero-container .hero-image img {
+    display: none;
+  }
+
+  header .hero-wrapper .hero-container {
+    display: block;
+  }
+
+  header .navbar .navbar-nav {
+    display: none
+  }
+
+  header .navbar .navbar-ham {
+    display: flex;
+  }
+
+  main .content-wrapper .container .section-title h1 {
+    font-size: 25px;
+  }
+}
+
+@media (max-width: 425px) {
+  main .content-wrapper .container .section-title h1 {
+    font-size: 20px;
+  }
+}
+
+
+@media (max-width: 375px) {
+  header .hero-wrapper .hero-container .hero-text h1 {
+    font-size: 27px;
+  }
+}

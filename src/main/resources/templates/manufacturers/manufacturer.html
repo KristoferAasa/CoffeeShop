@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Manufacturer</title>
+</head>
+<body>
+    
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>URL</th>
+            </tr>
+        </thead>
+        <tbody>
+                <td th:text="${manufacturer.name}"></td>
+                <td th:text="${manufacturer.url}"></td>
+                <td>
+                    <a th:href="@{/manufacturers/edit/{id}(id=${manufacturer.id})}">Edit</a> |
+                    <a th:href="@{/manufacturers/delete/{id}(id=${manufacturer.id})}">Delete</a>
+                </td>
+        </tbody>
+    </table>
+
+    <h2>Products: <span th:text="${manufacturer.products.size()}"></span></h2>
+    <ul th:each="product : ${manufacturer.products}">
+        <li><a th:text="${product.name}"></a></li>
+    </ul>
+    <a href="/manufacturers">Back to Manufacturers List</a>
+</body>
+</html>

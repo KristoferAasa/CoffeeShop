@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>List of Manufacturers</title>
+</head>
+<body>
+    <h2>List of Manufacturers</h2>
+    
+    <ul th:each="manufacturer : ${manufacturers}">
+        <li><a th:href="@{/manufacturers/{id}(id=${manufacturer.id})}" th:text="${manufacturer.name}"></a></li>
+    </ul>
+    <br>
+    <a href="/manufacturers/add">Add New Manufacturer</a>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/tuote.css" />
+    <link rel="stylesheet" href="https://use.typekit.net/lwj6vmz.css" />
+    <script defer src="/js/tuote.js"></script>
+    <title th:text="${product.name}"></title>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <a href="/" class="navbar-logo logo">KAHVIKAUPPA</a>
+        <div class="navbar-ham">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a href="/kahvilaitteet" class="nav-link">Kahvilaitteet</a>
+          </li>
+          <li class="nav-item">
+            <a href="/kulutustuotteet" class="nav-link">Kulutustuotteet</a>
+          </li>
+        </ul>
+      </nav>
+
+      <aside class="ham-aside">
+        <a href="/" class="navbar-logo logo">KAHVIKAUPPA</a>
+        <ul class="aside-nav">
+          <li class="aside-item">
+            <a href="/kahvilaitteet" class="aside-link">Kahvilaitteet</a>
+          </li>
+          <li class="aside-item">
+            <a href="/kulutustuotteet" class="aside-link">Kulutustuotteet</a>
+          </li>
+        </ul>
+      </aside>
+
+      <div class="ham-cover"></div>
+    </header>
+
+    <main>
+      <div class="product-container">
+        <div class="image-container">
+          <img th:src="${product.image}" />
+        </div>
+        <div class="product-info">
+          <div class="product-header">
+            <h1 th:text="${product.name}">Product name</h1>
+          </div>
+          <div class="product-description">
+            <p class="description-text" th:text="${product.description}">Product desc</p>
+            <h3 class="price-text" th:text="${product.price + '€'}">9.99€</h3>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

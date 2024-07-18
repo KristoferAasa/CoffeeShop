@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Supplier</title>
+</head>
+<body>
+    
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Contact Person</th>
+                <th>Contact Email</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+                <td th:text="${supplier.name}"></td>
+                <td th:text="${supplier.contactPerson}"></td>
+                <td th:text="${supplier.contactEmail}"></td>
+                <td>
+                    <a th:href="@{/suppliers/edit/{id}(id=${supplier.id})}">Edit</a> |
+                    <a th:href="@{/suppliers/delete/{id}(id=${supplier.id})}">Delete</a>
+                </td>
+        </tbody>
+    </table>
+
+    <h2>Products: <span th:text="${supplier.products.size()}"></span></h2>
+    <ul th:each="product : ${supplier.products}">
+        <li><a th:text="${product.name}"></a></li>
+    </ul>
+    <a href="/suppliers">Back to Supplier List</a>
+</body>
+</html>

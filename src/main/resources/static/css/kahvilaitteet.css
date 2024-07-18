@@ -1,0 +1,268 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: #4e4946;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+}
+
+.logo {
+  font-family: sweet-square-pro, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+header .navbar {
+  background-color: #ffede3;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 6rem;
+  position: fixed;
+  z-index: 50;
+  width: 100%;
+  top: 0;
+}
+
+header a {
+  text-decoration: none;
+  color: #4e4946;
+}
+
+
+header .navbar .navbar-nav {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+header .navbar .navbar-ham {
+  height: 20px;
+  width: 30px;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+header .navbar .navbar-ham:hover  {
+  cursor: pointer;
+}
+
+header .navbar .navbar-ham div {
+  width: 100%;
+  height: 5px;
+  border-radius: 100px;
+  background-color: #4e4946;
+  transition: transform 300ms ease;
+}
+
+header .navbar .navbar-ham div:nth-child(2) {
+  width: 80%;
+}
+
+header .navbar .navbar-ham.active div:nth-child(1){
+  transform: translateY(8px) rotate(45deg);
+}
+
+header .navbar .navbar-ham.active div:nth-child(2){
+  transform: scale(0);
+}
+
+header .navbar .navbar-ham.active div:nth-child(3){
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+header .navbar .navbar-nav .nav-link {
+  font-weight: 800;
+  transition: 300ms;
+}
+
+header .navbar .navbar-nav .nav-link:hover {
+  color: #ab826d;
+}
+
+header .ham-aside {
+  z-index: 60;
+  position: fixed;
+  min-height: 100vh;
+  width: max-content;
+  background-color: #ffede3;
+  border-right: #4e4946 1px solid;
+  padding: 1rem 2rem;
+  transition: transform 300ms ease;
+  transform: translateX(-100%);
+  top: 0;
+}
+
+header .ham-aside.open  {
+  transform: translateX(0);
+}
+
+header .ham-aside .aside-nav {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  font-weight: 800;
+  margin-top: 2rem;
+}
+
+header .ham-cover {
+  position: fixed;
+  z-index: 55;
+  background-color: black;
+  opacity: 50%;
+  inset: 0;
+  display: none;
+}
+
+header .ham-cover.active {
+  display: block;
+}
+
+main {
+  padding-inline: 6rem;
+  margin-top: 6rem;
+}
+
+main h1 {
+  font-family: sweet-square-pro, sans-serif;
+}
+
+main a {
+  text-decoration: none;
+  color: #4e4946;
+}
+
+main .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.item-section {
+  margin-top: 3rem;
+}
+
+.item-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  justify-items: center;
+  align-items: center;
+}
+
+.item {
+  height: 100%;
+  border-radius: 5px;
+  overflow: hidden;
+  transition: 300ms;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.item:hover {
+  background-color: #ffede3;
+  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+}
+
+.item-link {
+  height: 100%;
+}
+
+.image-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  overflow: hidden; 
+}
+
+.item img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.item-details {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 1rem;
+  align-items: center;
+}
+
+.item-price {
+  color: #ad8570;
+}
+
+main .pagination {
+  margin-block: 2rem;
+}
+
+@media (max-width: 1024px) {
+  .item-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  header .navbar {
+    padding: 1rem 2rem;
+  }
+
+  main {
+    padding-inline: 2rem;
+  }
+
+  .item-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 616px) {
+  header .navbar .navbar-nav {
+    display: none;
+  }
+
+  header .navbar .navbar-ham {
+    display: flex;
+  }
+
+  .item-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 425px) {
+  .item-grid {
+    grid-template-columns: 1fr;
+  }
+
+  main .header h1 {
+    font-size: 25px;
+  }
+}
+
+@media (max-width: 375px) {
+  .item-grid {
+    grid-template-columns: 1fr;
+  }
+
+  main .header h1 {
+    font-size: 20px;
+  }
+}

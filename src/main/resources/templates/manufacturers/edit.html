@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Manufacturer</title>
+</head>
+<body>
+    <h2>Edit Manufacturer</h2>
+    
+    <form method="post" th:action="@{/manufacturers/edit/{id}(id=${manufacturer.id})}">
+        <label>Name:</label>
+        <input type="text" th:field="${manufacturer.name}" required><br>
+        
+        <label>URL:</label>
+        <input type="text" th:field="${manufacturer.url}" required><br>
+        
+        <input type="submit" value="Save Changes">
+    </form>
+    
+    <br>
+    <a th:href="@{/manufacturers/{id}(id=${manufacturer.id})}">Cancel</a>
+</body>
+</html>

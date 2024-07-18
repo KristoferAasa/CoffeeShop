@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Product</title>
+</head>
+<body>
+    <h2>Edit Product</h2>
+    <form method="post" th:action="@{/products/edit/{id}(id=${product.id})}">
+        <label>Name: <input type="text" th:field="${product.name}"/></label><br/>
+        <label>Description: <textarea th:field="${product.description}"></textarea></label><br/>
+        <label>Price: <input type="text" th:field="${product.price}"/></label><br/>
+        <label>Image URL: <input type="text" th:field="${product.image}"/></label><br/>
+        <label>Department:
+            <select name="departmentId">
+                <option th:each="dept : ${departments}" th:value="${dept.id}" th:text="${dept.name}"></option>
+            </select>
+        </label><br>
+        <label>Manufacturer:
+            <select name="manufacturerId">
+                <option th:each="manu : ${manufacturers}" th:value="${manu.id}" th:text="${manu.name}"></option>
+            </select>
+        </label><br>
+        <label>Supplier: 
+            <select name="supplierId">
+                <option th:each="supp : ${suppliers}" th:value="${supp.id}" th:text="${supp.name}"></option>
+            </select>
+        </label><br>
+        <input type="submit" value="Save Changes"/>
+    </form>
+
+    <br>
+    <a th:href="@{/products/{id}(id=${product.id})}">Cancel</a>
+</body>
+</html>
