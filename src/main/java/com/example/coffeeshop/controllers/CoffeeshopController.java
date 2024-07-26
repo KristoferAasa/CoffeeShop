@@ -57,4 +57,9 @@ public class CoffeeshopController {
         model.addAttribute("product", product);
         return "coffeeshop/tuote";
     }
+
+    @GetMapping("/adminpanel")
+    public String getControlPanel() {
+        return "coffeeshop/adminpanel";
+    }
 }

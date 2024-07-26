@@ -3,16 +3,18 @@ package com.example.coffeeshop.models;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;
-import jakarta.persistence.Entity;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.*;
 import java.util.List;
-import org.springframework.data.jpa.domain.AbstractPersistable;
 
 @Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Department extends AbstractPersistable<Long> {
+public class Department {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
     private String name;
     private Long departmentId;
 
