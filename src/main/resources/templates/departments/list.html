@@ -7,10 +7,23 @@
 <body>
     <h2>List of Departments</h2>
     
-    <ul th:each="department : ${departments}" style="display: flex; gap: .5rem;">
-        <li th:text="${department.name}"></li>
-        <a th:href="@{/departments/delete/{id}(id=${department.id})}">Delete</a>
-    </ul>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Department ID</th>
+            </tr>
+        </thead>
+        <tbody th:each="department : ${departments}">
+                <td th:text="${department.id}"></td>
+                <td th:text="${department.name}"></td>
+                <td th:text="${department.departmentId}"></td>
+                <td>
+                    <a th:href="@{/departments/delete/{id}(id=${department.id})}">Delete</a>
+                </td>
+        </tbody>
+    </table>
 
     <br>
     <a href="/departments/add">Add New Department</a>
