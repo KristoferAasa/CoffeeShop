@@ -6,14 +6,13 @@ import lombok.AllArgsConstructor;
 import jakarta.persistence.*;
 import java.util.List;
 
+import org.springframework.data.jpa.domain.AbstractPersistable;
+
 @Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Department {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class Department  extends AbstractPersistable<Long>  {
 
     private String name;
     private Long departmentId;
